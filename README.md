@@ -1,2 +1,2 @@
 
-Simple weather application utilising thml, css and javascript
+Weather application built using, css and javascript
