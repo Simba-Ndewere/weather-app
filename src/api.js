@@ -7,10 +7,7 @@ class API {
         const weatherObject = await response.json();
         console.log(weatherObject);
     }
-0
-    static getLocationImage() {
-        
-    }
+    
 }
 
 export default API;

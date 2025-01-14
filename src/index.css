@@ -18,18 +18,11 @@ body {
     width: 25%;
     display: flex;
     flex-direction: column;
-    border: solid 2px green;
 }
 
 .right {
     flex-grow: 1;
-}
-
-img {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    cursor: pointer;
+    border: solid 2px red;
 }
 
 .search {
@@ -58,25 +51,28 @@ img {
 }
 
 .icon-temp-date {
-    border: solid 2px black;
     display: flex;
     flex-direction: column;
     flex: 6;
 }
 
 .weather-image {
-    border: solid 2px blue;
     flex: 4;
 }
 
 .date-temp {
-    border: solid 2px yellow;
+    border: solid 3px blue;
     flex: 2;
 }
 
 .bottom-description {
-    border: solid 3px brown;
     flex: 2;
+}
+
+.weather-image img {
+    margin-top: 30px;
+    width: 100%;
+    height: 80%;
 }
 
 /*tablet*/
