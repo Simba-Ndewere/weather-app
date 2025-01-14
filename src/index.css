@@ -92,3 +92,8 @@ img {
         width: 0px;
     }
 }
+
+html {
+    visibility: visible;
+    opacity: 1;
+}
