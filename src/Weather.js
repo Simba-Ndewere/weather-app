@@ -1,8 +1,9 @@
-class weather {
-    constructor(temperature, condition, address) {
+class Weather {
+    constructor(temperature, condition, address, iconDescription) {
         this._temperature = temperature;
         this._condition = condition;
         this._address = address;
+        this._iconDescription = iconDescription;
     }
 
     get temperature() {
@@ -29,4 +30,13 @@ class weather {
         this._address = address;
     }
 
+    get iconDescription() {
+        return this._iconDescription;
+    }
+
+    set iconDescription(iconDescription) {
+        this._iconDescription = iconDescription;
+    }
 }
+
+export default Weather;

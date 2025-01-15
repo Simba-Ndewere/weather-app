@@ -157,6 +157,10 @@ body {
         align-items: flex-start;
     }
 
+    .weather-image {
+        border-bottom: 0px;
+    }
+
 }
 
 html {
