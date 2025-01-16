@@ -4,8 +4,6 @@ class Dom {
 
     static updateLeftContainer(weatherObject) {
         //update image
-        //update temperature
-        //update address
 
         const weatherImage = document.querySelector(".weather-image");
         const iconImage = document.createElement("img");
