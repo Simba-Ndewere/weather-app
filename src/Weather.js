@@ -1,11 +1,11 @@
 class Weather {
-    constructor(temperature, condition, address, iconDescription, days, minmax) {
+    constructor(temperature, address, iconDescription, days, minmax, dayIcons) {
         this._temperature = temperature;
-        this._condition = condition;
         this._address = address;
         this._iconDescription = iconDescription;
         this._days = days;
         this._minmax = minmax;
+        this._dayIcons = dayIcons;
     }
 
     get temperature() {
@@ -14,14 +14,6 @@ class Weather {
 
     set temperature(temperature) {
         this._temperature = temperature;
-    }
-
-    get condition() {
-        return this._condition;
-    }
-
-    set condition(condition) {
-        this._condition = condition;
     }
 
     get address() {
@@ -62,6 +54,14 @@ class Weather {
 
     set minmax(minmax) {
         this._minmax = minmax;
+    }
+
+    get dayIcons() {
+        return this._dayIcons;
+    }
+
+    set dayIcons(dayIcons) {
+        this._dayIcons = dayIcons;
     }
 }
 
