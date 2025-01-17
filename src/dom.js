@@ -20,6 +20,18 @@ class Dom {
         address.textContent = weatherObject.address;
     }
 
+    static updateTopRightContainerDay(weatherObject) {
+
+    }
+
+    static updateTopRightContainerIcon(){
+
+    }
+
+    static updateTopRightContainerTemp(){
+
+    }
+
 }
 
 export default Dom;

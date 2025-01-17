@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #d4ebdb;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .container {
@@ -98,7 +99,6 @@ body {
 }
 
 .bottom-description {
-    font-family: 'Quicksand', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,6 +127,31 @@ body {
     height: 60%;
     width: 15%;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six {
+
+}
+
+.min-max {
+    display: flex;
+    gap: 10px;
+}
+
+.day-image {
+    flex-grow: 1;
+    border: solid 2px red;
+    width: 90%;
+    height: 80%;
 }
 
 
@@ -172,7 +197,7 @@ body {
             "three four"
             "five six";
     }
-    
+
 
     .one {
         grid-area: one;

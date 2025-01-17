@@ -5,4 +5,5 @@ import dom from './dom'
 const weatherObject = await api.getWeather('harare');
 console.log(weatherObject);
 dom.updateLeftContainer(weatherObject);
+//dom.updateTopRightContainer(weatherObject);
  
