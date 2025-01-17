@@ -39,11 +39,11 @@ class Weather {
         this._iconDescription = iconDescription;
     }
 
-    get day() {
+    get days() {
         return this._days;
     }
 
-    set day(days) {
+    set days(days) {
         this._days = days;
     }
 }

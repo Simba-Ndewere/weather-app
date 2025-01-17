@@ -8,8 +8,8 @@ body {
 }
 
 .container {
-    min-height: 80%;
-    max-width: 70%;
+    min-height: 90%;
+    max-width: 80%;
     margin: auto;
     margin-top: 40px;
     display: flex;
@@ -130,7 +130,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 #one,
@@ -152,6 +152,15 @@ body {
     border: solid 2px red;
     width: 90%;
     height: 80%;
+}
+
+.day-image img {
+    width: 90%;
+    height: 80%;
+}
+
+.min {
+    color: #A9A9A9;
 }
 
 
@@ -306,6 +315,7 @@ body {
     .five,
     .six {
         height: 100%;
+        font-size: 10px;
     }
 
 }

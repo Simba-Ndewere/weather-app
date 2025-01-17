@@ -1,5 +1,5 @@
 import weatherIconLeft from './images/night.png'
-
+const days = document.querySelectorAll(".days");
 class Dom {
 
     static updateLeftContainer(weatherObject) {
@@ -20,15 +20,18 @@ class Dom {
         address.textContent = weatherObject.address;
     }
 
-    static updateTopRightContainerDay(weatherObject) {
-
+    static updateTopRightContainerDay(dayArray) {
+        for(let a = 0; a < days.length; a++){
+            const date = new Date(`${dayArray[a+1]}`);     
+            days[a].textContent = date.toString().substring(0,3);     
+        }
     }
 
     static updateTopRightContainerIcon(){
 
     }
 
-    static updateTopRightContainerTemp(){
+    static updateTopRightContainerTemp (){
 
     }
 
