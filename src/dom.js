@@ -1,5 +1,5 @@
 import weatherIconLeft from './images/night.png'
-const days = document.querySelectorAll(".days");
+
 class Dom {
 
     static updateLeftContainer(weatherObject) {
@@ -21,6 +21,7 @@ class Dom {
     }
 
     static updateTopRightContainerDay(dayArray) {
+        const days = document.querySelectorAll(".days");
         for(let a = 0; a < days.length; a++){
             const date = new Date(`${dayArray[a+1]}`);     
             days[a].textContent = date.toString().substring(0,3);     
@@ -31,8 +32,14 @@ class Dom {
 
     }
 
-    static updateTopRightContainerTemp (){
-
+    static updateTopRightContainerMinMaxTemp(minmax){
+        const max = document.querySelectorAll(".max");
+        const min = document.querySelectorAll(".min");
+        
+        for(let a = 0; a < 6; a++){
+            max[a].textContent = minmax[a+1][0]; 
+            min[a].textContent = minmax[a+1][1];
+        }
     }
 
 }
