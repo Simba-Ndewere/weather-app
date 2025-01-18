@@ -24,7 +24,9 @@ class Dom {
         temperature.textContent = weatherObject.temperature + "°C";
 
         const address = document.getElementById("addressId");
-        address.textContent = weatherObject.address;
+        const date = new Date(`${weatherObject.days[0]}`);
+        console.log(date);
+        address.textContent = weatherObject.address + ' - ' + date.toString().substring(0,10);
     }
 
     static updateTopRightContainerDay(dayArray) {
@@ -38,7 +40,6 @@ class Dom {
     static updateTopRightContainerDayIcon(iconArray){
         const daysIcons = document.querySelectorAll(".day-image");
         for(let a = 0; a < daysIcons.length; a++){
-            console.log("enter");
             const iconImage = document.createElement("img");
             iconImage.src = this.getWeatherIcon(iconArray[a+1]);
             daysIcons[a].appendChild(iconImage);
@@ -68,7 +69,6 @@ class Dom {
             case 'clear-night': return clearNight;
         }
     }
-
 }
 
 export default Dom;

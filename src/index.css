@@ -13,6 +13,7 @@ body {
     margin: auto;
     margin-top: 40px;
     display: flex;
+    
 }
 
 .left {
@@ -30,7 +31,7 @@ body {
 
 .search {
     margin-top: 5px;
-    height: 30px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,17 +39,17 @@ body {
 }
 
 .search input {
-    width: 250px;
+    width: 280px;
+    height: 45px;
     border-radius: 25px;
     font-size: 18px;
     padding: 3px 5px;
     border: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 12px rgb(0 0 0 / 0.25);
     display: flex;
 }
 
 .search input:focus {
-    width: 252px;
     outline: none;
     border: none;
 }
@@ -109,11 +110,9 @@ body {
 }
 
 .right-top {
-    min-height: 30%;
+    min-height: 15%;
     display: flex;
     gap: 15px;
-    align-items: center;
-    justify-content: center;
 }
 
 .right-bottom {
@@ -127,7 +126,7 @@ body {
 .five,
 .six {
     background-color: white;
-    height: 60%;
+    height: 100%;
     width: 15%;
     box-shadow: 0 5px 12px rgb(0 0 0 / 0.25);
     display: flex;
@@ -159,6 +158,13 @@ body {
     color: #A9A9A9;
 }
 
+.weekly {
+    font-size: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    height: 5%;
+    margin-top: 30px;
+}
+
 
 /*tablet*/
 @media (max-width: 1280px) {
@@ -167,7 +173,7 @@ body {
         max-width: 100%;
         margin-top: 0px;
     }
-
+    
     .left {
         width: 40%;
     }
@@ -181,8 +187,8 @@ body {
     }
 
     .weather-image img {
-        width: 70%;
-        height: 50%;
+        width: 50%;
+        height: 60%;
         margin-top: 0px;
     }
 
@@ -193,16 +199,14 @@ body {
     }
 
     .right-top {
-        grid-template-columns: 3fr 3fr;
-        grid-template-rows: 3fr 3fr 3fr;
+        grid-template-columns: 3fr 3fr 3fr;
+        grid-template-rows: 3fr 3fr;
         display: grid;
         padding-left: 20px;
         gap: 0px;
-        grid-template-areas: "one two"
-            "three four"
-            "five six";
+        grid-template-areas: "one two three"
+            "four five six";
     }
-
 
     .one {
         grid-area: one;
@@ -228,6 +232,11 @@ body {
         grid-area: six;
     }
 
+    .search input {
+        width: 250px;
+        height: 35px;
+    }
+
     .one,
     .two,
     .three,
@@ -237,6 +246,7 @@ body {
         height: 80%;
         width: 90%;
     }
+    
 }
 
 /*mobile*/
@@ -251,7 +261,6 @@ body {
     .left {
         width: 100%;
         min-height: 40%;
-        gap: 15px;
     }
 
     .right {
@@ -261,6 +270,17 @@ body {
 
     .search input:focus {
         width: 250px;
+    }
+
+    .right-top {
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 3fr 3fr 3fr;
+        display: grid;
+        padding-left: 20px;
+        gap: 0px;
+        grid-template-areas: "one two"
+            "three four"
+            "five six";
     }
 
     .icon-temp-date {
@@ -292,6 +312,7 @@ body {
     .right-top {
         min-height: 100%;
         gap: 20px;
+        flex-wrap: wrap;
     }
 
     .right-bottom {
@@ -300,7 +321,7 @@ body {
 
     .weather-image img {
         margin-top: 30px;
-        width: 100%;
+        width: 80%;
         height: 80%;
     }
 
@@ -310,7 +331,6 @@ body {
     .four,
     .five,
     .six {
-        height: 100%;
         font-size: 10px;
     }
 
