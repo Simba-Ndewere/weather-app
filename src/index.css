@@ -13,7 +13,7 @@ body {
     margin: auto;
     margin-top: 40px;
     display: flex;
-
+    overflow-y: auto
 }
 
 .left {
@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-right: 20px;
+    padding-top: 20px;
 }
 
 .right {
@@ -106,7 +107,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .right-top {
@@ -201,6 +202,7 @@ body {
 
     .right-top {
         min-height: 50%;
+        margin-top: 8px;
     }
 
     .right-bottom {
@@ -286,7 +288,6 @@ body {
 
     .right {
         width: 100%;
-        flex-grow: 1;
     }
 
     .search input:focus {
@@ -331,7 +332,7 @@ body {
     }
 
     .right-top {
-        min-height: 100%;
+        min-height: 500px;
         gap: 20px;
         flex-wrap: wrap;
     }
@@ -358,13 +359,28 @@ body {
     .today-highlights {
         min-height: 100%;
         display: grid;
-        grid-template-columns: 3fr 3fr;
-        grid-template-rows: 3fr 3fr 3fr;
+        grid-template-columns: 3fr;
+        grid-template-rows: 3fr 3fr 3fr 3fr 3fr 3fr;
         align-items: center;
         justify-content: center;
         padding-left: 20px;
     }
 
+    .highlights1,
+    .highlights2,
+    .highlights3,
+    .highlights4,
+    .highlights5,
+    .highlights6 {
+        min-height: 250px;
+    }
+
+    .weekly {
+        font-size: 20px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        height: 1%;
+        margin-top: 5px;
+    }
 }
 
 html {
