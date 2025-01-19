@@ -2,7 +2,7 @@ import "./index.css";
 import api from './api';
 import dom from './dom'
 
-const weather = await api.getWeather('kingston jamaica');
+const weather = await api.getWeather('miami');
 dom.updateLeftContainer(weather);
 dom.updateTopRightContainerDay(weather.days);
 dom.updateTopRightContainerMinMaxTemp(weather.minmax);
