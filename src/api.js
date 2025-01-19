@@ -1,6 +1,5 @@
 import Weather from "./Weather";
 class API {
-
     static async getWeather(location) {
         let datesArray = [];
         let minmax = [];
@@ -16,9 +15,10 @@ class API {
             dayIcons.push(day.icon);
         });
 
-        const weatherObject = new Weather(weatherJson.currentConditions.temp,
-            weatherJson.resolvedAddress, weatherJson.currentConditions.icon, datesArray, minmax, dayIcons);
-        return weatherObject;
+        const weather = new Weather(weatherJson.currentConditions.temp,
+            weatherJson.resolvedAddress, weatherJson.currentConditions.icon, datesArray, minmax, dayIcons, 
+            weatherJson.currentConditions.sunrise, weatherJson.currentConditions.sunset);
+        return weather;
     }
 
 }

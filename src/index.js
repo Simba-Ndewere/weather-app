@@ -7,4 +7,5 @@ dom.updateLeftContainer(weather);
 dom.updateTopRightContainerDay(weather.days);
 dom.updateTopRightContainerMinMaxTemp(weather.minmax);
 dom.updateTopRightContainerDayIcon(weather.dayIcons);
+dom.updateTodayHighLights(weather);
  

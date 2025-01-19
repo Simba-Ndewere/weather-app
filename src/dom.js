@@ -10,23 +10,22 @@ import wind from './images/wind.png';
 
 class Dom {
 
-    static updateLeftContainer(weatherObject) {
+    static updateLeftContainer(weather) {
 
         const weatherImage = document.querySelector(".weather-image");
         const iconImage = document.createElement("img");
-        iconImage.src = this.getWeatherIcon(weatherObject.iconDescription);
+        iconImage.src = this.getWeatherIcon(weather.iconDescription);
         weatherImage.appendChild(iconImage);
 
         const condition = document.getElementById("conditionId");
-        condition.textContent = weatherObject.iconDescription;
+        condition.textContent = weather.iconDescription;
 
         const temperature = document.getElementById("tempId");
-        temperature.textContent = weatherObject.temperature + "°C";
+        temperature.textContent = weather.temperature + "°C";
 
         const address = document.getElementById("addressId");
-        const date = new Date(`${weatherObject.days[0]}`);
-        console.log(date);
-        address.textContent = weatherObject.address + ' - ' + date.toString().substring(0,10);
+        const date = new Date(`${weather.days[0]}`);
+        address.textContent = weather.address + ' - ' + date.toString().substring(0,10);
     }
 
     static updateTopRightContainerDay(dayArray) {
@@ -68,6 +67,14 @@ class Dom {
             case 'clear-day': return clearDay;
             case 'clear-night': return clearNight;
         }
+    }
+
+    static updateTodayHighLights(weather){
+        const sunrise = document.querySelector(".sunrise-time");
+        const sunset = document.querySelector(".sunset-time");
+
+        sunrise.textContent = weather.sunrise.toString().substring(0,5);
+        sunset.textContent = weather.sunset.toString().substring(0,5);
     }
 }
 
