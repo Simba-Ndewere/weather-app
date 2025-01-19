@@ -73,11 +73,12 @@ class Dom {
         const sunrise = document.querySelector(".sunrise-time");
         const sunset = document.querySelector(".sunset-time");
         const windspeed = document.querySelector(".wind");
+        const cloudcover = document.querySelector(".percentage-cloud-cover");
 
         sunrise.textContent = weather.sunrise.toString().substring(0, 5);
         sunset.textContent = weather.sunset.toString().substring(0, 5);
         windspeed.textContent = weather.wind + "km/h"
-
+        cloudcover.textContent = weather.cloudCover + "%";
 
     }
 }

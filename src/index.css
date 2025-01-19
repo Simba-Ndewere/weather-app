@@ -188,19 +188,40 @@ body {
 }
 
 .highlights1,
-.highlights2 {
+.highlights2,
+.highlights3,
+.highlights4{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
+.highlights4 img {
+    width: 90px;
+    height: 90px;   
+}
+
 .highlights1 img {
     width: 60px;
-    height: 60px;
+    height: 40px;
+}
+
+.cloud-percentage {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 35px;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .sunrise-sunset,
-.wind-status {
+.wind-status,
+.visibility,
+.cloud-cover {
     font-size: 18px;
     color: #A9A9A9;
 }
@@ -225,11 +246,12 @@ body {
     font-size: 25px;
 }
 
-.wind {
-    font-size: 50px;
+.wind,
+.visibility-value {
+    font-size: 35px;
     flex: 2;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 100%;
 }

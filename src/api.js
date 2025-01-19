@@ -17,7 +17,8 @@ class API {
 
         const weather = new Weather(weatherJson.currentConditions.temp,
             weatherJson.resolvedAddress, weatherJson.currentConditions.icon, datesArray, minmax, dayIcons, 
-            weatherJson.currentConditions.sunrise, weatherJson.currentConditions.sunset, weatherJson.currentConditions.windspeed);
+            weatherJson.currentConditions.sunrise, weatherJson.currentConditions.sunset, weatherJson.currentConditions.windspeed,
+        weatherJson.currentConditions.cloudcover);
         return weather;
     }
 
