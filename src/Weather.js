@@ -1,5 +1,5 @@
 class Weather {
-    constructor(temperature, address, iconDescription, days, minmax, dayIcons, sunrise, sunset) {
+    constructor(temperature, address, iconDescription, days, minmax, dayIcons, sunrise, sunset, wind) {
         this._temperature = temperature;
         this._address = address;
         this._iconDescription = iconDescription;
@@ -8,6 +8,7 @@ class Weather {
         this._dayIcons = dayIcons;
         this._sunrise = sunrise;
         this._sunset = sunset;
+        this.wind = wind;
     }
 
     get temperature() {
@@ -80,6 +81,14 @@ class Weather {
 
     set sunset(sunset) {
         this._sunset = sunset;
+    }
+
+    get wind() {
+        return this._wind;
+    }
+
+    set wind(wind) {
+        this._wind = wind;
     }
 }
 

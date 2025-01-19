@@ -25,7 +25,7 @@ class Dom {
 
         const address = document.getElementById("addressId");
         const date = new Date(`${weather.days[0]}`);
-        address.textContent = weather.address + ' - ' + date.toString().substring(0,10);
+        address.textContent = weather.address + ' - ' + date.toString().substring(0, 10);
     }
 
     static updateTopRightContainerDay(dayArray) {
@@ -36,11 +36,11 @@ class Dom {
         }
     }
 
-    static updateTopRightContainerDayIcon(iconArray){
+    static updateTopRightContainerDayIcon(iconArray) {
         const daysIcons = document.querySelectorAll(".day-image");
-        for(let a = 0; a < daysIcons.length; a++){
+        for (let a = 0; a < daysIcons.length; a++) {
             const iconImage = document.createElement("img");
-            iconImage.src = this.getWeatherIcon(iconArray[a+1]);
+            iconImage.src = this.getWeatherIcon(iconArray[a + 1]);
             daysIcons[a].appendChild(iconImage);
         }
     }
@@ -69,12 +69,16 @@ class Dom {
         }
     }
 
-    static updateTodayHighLights(weather){
+    static updateTodayHighLights(weather) {
         const sunrise = document.querySelector(".sunrise-time");
         const sunset = document.querySelector(".sunset-time");
+        const windspeed = document.querySelector(".wind");
 
-        sunrise.textContent = weather.sunrise.toString().substring(0,5);
-        sunset.textContent = weather.sunset.toString().substring(0,5);
+        sunrise.textContent = weather.sunrise.toString().substring(0, 5);
+        sunset.textContent = weather.sunset.toString().substring(0, 5);
+        windspeed.textContent = weather.wind + "km/h"
+
+
     }
 }
 
