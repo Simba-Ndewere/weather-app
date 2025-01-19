@@ -1,19 +1,19 @@
 html,
 body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #d4ebdb;
     font-family: 'Quicksand', sans-serif;
+    overflow-y: auto
 }
 
 .container {
-    min-height: 90%;
-    max-width: 80%;
+    height: 100%;
+    width: 80%;
     margin: auto;
     margin-top: 40px;
     display: flex;
-    overflow-y: auto
 }
 
 .left {
@@ -187,7 +187,8 @@ body {
 
 }
 
-.highlights1 {
+.highlights1,
+.highlights2 {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -198,7 +199,8 @@ body {
     height: 60px;
 }
 
-.sunrise-sunset {
+.sunrise-sunset,
+.wind-status {
     font-size: 18px;
     color: #A9A9A9;
 }
@@ -223,199 +225,13 @@ body {
     font-size: 25px;
 }
 
-/*tablet*/
-@media (max-width: 1280px) {
-    .container {
-        min-height: 100%;
-        max-width: 100%;
-        margin-top: 0px;
-    }
-
-    .left {
-        width: 40%;
-    }
-
-    .right-top {
-        min-height: 50%;
-        margin-top: 8px;
-    }
-
-    .right-bottom {
-        min-height: 50%;
-    }
-
-    .weather-image img {
-        width: 50%;
-        height: 60%;
-        margin-top: 0px;
-    }
-
-    .weather-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .right-top {
-        grid-template-columns: 3fr 3fr 3fr;
-        grid-template-rows: 3fr 3fr;
-        display: grid;
-        padding-left: 20px;
-        gap: 0px;
-        grid-template-areas: "one two three"
-            "four five six";
-    }
-
-    .one {
-        grid-area: one;
-    }
-
-    .two {
-        grid-area: two;
-    }
-
-    .three {
-        grid-area: three;
-    }
-
-    .four {
-        grid-area: four;
-    }
-
-    .five {
-        grid-area: five;
-    }
-
-    .six {
-        grid-area: six;
-    }
-
-    .search input {
-        width: 250px;
-        height: 35px;
-    }
-
-    .one,
-    .two,
-    .three,
-    .four,
-    .five,
-    .six {
-        height: 90%;
-        width: 90%;
-    }
-
-}
-
-/*mobile*/
-@media (max-width: 767px) {
-    .container {
-        flex-direction: column;
-        max-width: 90%;
-        height: 100%;
-        margin-top: 0px;
-    }
-
-    .left {
-        width: 100%;
-        min-height: 40%;
-    }
-
-    .right {
-        width: 100%;
-    }
-
-    .search input:focus {
-        width: 250px;
-    }
-
-    .right-top {
-        grid-template-columns: 3fr 3fr;
-        grid-template-rows: 3fr 3fr 3fr;
-        display: grid;
-        padding-left: 20px;
-        gap: 0px;
-        grid-template-areas: "one two"
-            "three four"
-            "five six";
-    }
-
-    .icon-temp-date {
-        flex-grow: 1;
-        flex-direction: row;
-    }
-
-    .bottom-description {
-        display: none;
-    }
-
-    .temp {
-        font-size: 40px;
-    }
-
-    .conditions {
-        font-size: 15px;
-        align-items: flex-start;
-    }
-
-    .weather-image {
-        border-bottom: 0px;
-    }
-
-    .icon-temp-date {
-        border-bottom: 0px;
-    }
-
-    .right-top {
-        min-height: 500px;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .right-bottom {
-        min-height: 100%;
-    }
-
-    .weather-image img {
-        margin-top: 30px;
-        width: 80%;
-        height: 80%;
-    }
-
-    .one,
-    .two,
-    .three,
-    .four,
-    .five,
-    .six {
-        font-size: 10px;
-    }
-
-    .today-highlights {
-        min-height: 100%;
-        display: grid;
-        grid-template-columns: 3fr;
-        grid-template-rows: 3fr 3fr 3fr 3fr 3fr 3fr;
-        align-items: center;
-        justify-content: center;
-        padding-left: 20px;
-    }
-
-    .highlights1,
-    .highlights2,
-    .highlights3,
-    .highlights4,
-    .highlights5,
-    .highlights6 {
-        min-height: 250px;
-    }
-
-    .weekly {
-        font-size: 20px;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-        height: 1%;
-        margin-top: 5px;
-    }
+.wind {
+    font-size: 50px;
+    flex: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
 }
 
 html {
