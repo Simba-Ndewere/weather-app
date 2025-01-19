@@ -191,14 +191,16 @@ body {
 .highlights2,
 .highlights3,
 .highlights4,
-.highlights5{
+.highlights5,
+.highlights6{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .highlights4 img,
-.highlights5 img {
+.highlights5 img,
+.highlights6 img {
     width: 90px;
     height: 90px;   
 }
@@ -209,7 +211,8 @@ body {
 }
 
 .cloud-percentage,
-.solar-percentage {
+.solar-percentage,
+.humidity-percentage {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -225,7 +228,8 @@ body {
 .wind-status,
 .visibility,
 .cloud-cover,
-.solar-energy {
+.solar-energy,
+.humidity {
     font-size: 18px;
     color: #A9A9A9;
 }

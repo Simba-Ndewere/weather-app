@@ -76,11 +76,15 @@ class Dom {
         const windspeed = document.querySelector(".wind");
         const cloudcover = document.querySelector(".percentage-cloud-cover");
         const solarenergy = document.querySelector(".percentage-solar-generation");
+        const humidity = document.querySelector(".humidity-value");
+        console.log(weather);
+        console.log(weather.humidity);
         sunrise.textContent = weather.sunrise.toString().substring(0, 5);
         sunset.textContent = weather.sunset.toString().substring(0, 5);
         windspeed.textContent = weather.wind + "km/h"
         cloudcover.textContent = weather.cloudCover + "%";
         solarenergy.textContent = weather.solarEnergy + " mj/m2";
+        humidity.textContent = weather._humidity + "%";
 
     }
 }
