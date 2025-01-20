@@ -4,6 +4,8 @@ import dom from './dom'
 
 const search = document.querySelector(".search");
 const modal = document.querySelector(".modal");
+const modalLoader = document.querySelector(".modal-loader");
+
 let location = '';
 
 search.addEventListener('keypress', function (e) {
@@ -16,7 +18,9 @@ search.addEventListener('keypress', function (e) {
 
 const displayWeather = async (location) => {
     try {
+        modalLoader.classList.add('show');
         const weather = await api.getWeather(location);
+        modalLoader.classList.remove('show');
         dom.updateLeftContainer(weather);
         dom.updateTopRightContainerDay(weather.days);
         dom.updateTopRightContainerMinMaxTemp(weather.minmax);
@@ -24,16 +28,19 @@ const displayWeather = async (location) => {
         dom.updateTodayHighLights(weather);
         return weather;
     } catch (error) {
-        showModal();
+        showModalError();
     }
 }
 
-function showModal() {
+const showModalError = () => {
     modal.classList.add('show');
-
     setTimeout(() => {
         modal.classList.remove('show');
     }, 3000);
+}
+
+const showModalLoader = () => {
+    
 }
 
 window.onload = displayWeather('maidenhead uk');

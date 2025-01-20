@@ -262,8 +262,9 @@ html {
     opacity: 1;
 }
 
-.modal {
-    background-color: #c37a85;
+.modal,
+.modal-loader {
+    background-color: #a0c4b4;
     width: 50%;
     height: 30%;
     position: absolute;
@@ -279,7 +280,38 @@ html {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.modal.show {
+.modal.show,
+.modal-loader.show {
     opacity: 1;
     visibility: visible;
-  }
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
