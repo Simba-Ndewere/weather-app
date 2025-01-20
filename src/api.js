@@ -5,7 +5,7 @@ class API {
         let minmax = [];
         let dayIcons = [];
 
-        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=9DEP6JU7BXGUFKDLN9BDX9878&unitGroup=metric`, { mode: 'cors' });
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=8YDZA92DCCZ4K3TAFFCANU4AG&unitGroup=metric`, { mode: 'cors' });
         const weatherJson = await response.json();
 
         weatherJson.days.forEach(day => {
@@ -19,6 +19,7 @@ class API {
             weatherJson.resolvedAddress, weatherJson.currentConditions.icon, datesArray, minmax, dayIcons, 
             weatherJson.currentConditions.sunrise, weatherJson.currentConditions.sunset, weatherJson.currentConditions.windspeed,
         weatherJson.currentConditions.cloudcover, weatherJson.currentConditions.solarenergy, weatherJson.currentConditions.humidity);
+        
         return weather;
     }
 

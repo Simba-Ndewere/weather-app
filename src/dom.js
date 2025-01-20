@@ -15,6 +15,11 @@ class Dom {
         const weatherImage = document.querySelector(".weather-image");
         const iconImage = document.createElement("img");
         iconImage.src = this.getWeatherIcon(weather.iconDescription);
+
+        if(weatherImage.firstChild){
+            weatherImage.removeChild(weatherImage.firstChild);
+        }
+
         weatherImage.appendChild(iconImage);
 
         const condition = document.getElementById("conditionId");
@@ -42,6 +47,10 @@ class Dom {
         for (let a = 0; a < daysIcons.length; a++) {
             const iconImage = document.createElement("img");
             iconImage.src = this.getWeatherIcon(iconArray[a + 1]);
+            
+            if(daysIcons[a].firstChild){
+                daysIcons[a].removeChild(daysIcons[a].firstChild);
+            }
             daysIcons[a].appendChild(iconImage);
         }
     }

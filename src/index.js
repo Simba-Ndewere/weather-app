@@ -23,5 +23,7 @@ const displayWeather = async (location) => {
     return weather;
 }
 
+window.onload = displayWeather('maidenhead uk');
+
 
 
