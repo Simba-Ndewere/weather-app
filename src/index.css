@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #d4ebdb;
     font-family: 'Quicksand', sans-serif;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
 .container {
@@ -28,6 +28,7 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .search {
@@ -193,7 +194,7 @@ body {
 .highlights3,
 .highlights4,
 .highlights5,
-.highlights6{
+.highlights6 {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -203,7 +204,7 @@ body {
 .highlights5 img,
 .highlights6 img {
     width: 90px;
-    height: 90px;   
+    height: 90px;
 }
 
 .highlights1 img {
@@ -260,3 +261,25 @@ html {
     visibility: visible;
     opacity: 1;
 }
+
+.modal {
+    background-color: #c37a85;
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+  }
