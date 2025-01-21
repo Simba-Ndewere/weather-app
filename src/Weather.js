@@ -1,5 +1,5 @@
 class Weather {
-    constructor(temperature, address, iconDescription, days, minmax, dayIcons, sunrise, sunset, wind, cloudCover, solarEnergy,humidity) {
+    constructor(temperature, address, iconDescription, days, minmax, dayIcons, sunrise, sunset, wind, cloudCover, solarEnergy, humidity, visibility) {
         this._temperature = temperature;
         this._address = address;
         this._iconDescription = iconDescription;
@@ -11,7 +11,8 @@ class Weather {
         this._wind = wind;
         this._cloudCover = cloudCover;
         this._solarEnergy = solarEnergy;
-        this._humidity = humidity
+        this._humidity = humidity;
+        this._visibility = visibility;
     }
 
     get temperature() {
@@ -82,7 +83,7 @@ class Weather {
         return this._sunset;
     }
 
-    set sunset(sunset) {
+    set sunset(sunset) {modalLoader.classList.remove('show');
         this._sunset = sunset;
     }
 
@@ -116,6 +117,14 @@ class Weather {
 
     set humidity(humidity) {
         this._humidity = humidity;
+    }
+
+    get visibility() {
+        return this._visibility;
+    }
+
+    set visibility(visibility) {
+        this._visibility = visibility;
     }
 }
 

@@ -28,6 +28,7 @@ const displayWeather = async (location) => {
         dom.updateTodayHighLights(weather);
         return weather;
     } catch (error) {
+        modalLoader.classList.remove('show');
         showModalError();
     }
 }
@@ -39,9 +40,7 @@ const showModalError = () => {
     }, 3000);
 }
 
-const showModalLoader = () => {
-    
-}
+
 
 window.onload = displayWeather('maidenhead uk');
 

@@ -37,7 +37,6 @@ class Dom {
         const days = document.querySelectorAll(".days");
         for (let a = 0; a < days.length; a++) {
             const date = new Date(`${dayArray[a + 1]}`);
-            console.log(date);
             days[a].textContent = date.toString().substring(0, 3);
         }
     }
@@ -86,6 +85,7 @@ class Dom {
         const cloudcover = document.querySelector(".percentage-cloud-cover");
         const solarenergy = document.querySelector(".percentage-solar-generation");
         const humidity = document.querySelector(".humidity-value");
+        const visibility = document.querySelector(".visibility-value");
 
         sunrise.textContent = weather.sunrise.toString().substring(0, 5);
         sunset.textContent = weather.sunset.toString().substring(0, 5);
@@ -93,7 +93,7 @@ class Dom {
         cloudcover.textContent = weather.cloudCover + "%";
         solarenergy.textContent = weather.solarEnergy + " mj/m2";
         humidity.textContent = weather._humidity + "%";
-
+        visibility.textContent = weather.visibility + "km";
     }
 }
 
