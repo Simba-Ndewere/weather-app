@@ -83,7 +83,7 @@ class Weather {
         return this._sunset;
     }
 
-    set sunset(sunset) {modalLoader.classList.remove('show');
+    set sunset(sunset) {
         this._sunset = sunset;
     }
 

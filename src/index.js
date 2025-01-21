@@ -5,7 +5,7 @@ import dom from './dom'
 const search = document.querySelector(".search");
 const modal = document.querySelector(".modal");
 const modalLoader = document.querySelector(".modal-loader");
-
+let symbol = '°C';
 let location = '';
 
 search.addEventListener('keypress', function (e) {
@@ -21,9 +21,9 @@ const displayWeather = async (location) => {
         modalLoader.classList.add('show');
         const weather = await api.getWeather(location);
         modalLoader.classList.remove('show');
-        dom.updateLeftContainer(weather);
+        dom.updateLeftContainer(weather,symbol);
         dom.updateTopRightContainerDay(weather.days);
-        dom.updateTopRightContainerMinMaxTemp(weather.minmax);
+        dom.updateTopRightContainerMinMaxTemp(weather.minmax, symbol);
         dom.updateTopRightContainerDayIcon(weather.dayIcons);
         dom.updateTodayHighLights(weather);
         return weather;
@@ -40,9 +40,16 @@ const showModalError = () => {
     }, 3000);
 }
 
+document.querySelector(".checkbox").addEventListener('input', (e) =>{
+    if(e.target.checked){
+        symbol = "°F";
+    }else{
+        symbol = "°C";
+    }   
+    dom.updateTemperatureSymbol(symbol);
+});
 
-
-window.onload = displayWeather('maidenhead uk');
+window.onload = displayWeather('london uk');
 
 
 

@@ -10,13 +10,13 @@ import wind from './images/wind.png';
 
 class Dom {
 
-    static updateLeftContainer(weather) {
+    static updateLeftContainer(weather, symbol) {
 
         const weatherImage = document.querySelector(".weather-image");
         const iconImage = document.createElement("img");
         iconImage.src = this.getWeatherIcon(weather.iconDescription);
 
-        if(weatherImage.firstChild){
+        if (weatherImage.firstChild) {
             weatherImage.removeChild(weatherImage.firstChild);
         }
 
@@ -46,15 +46,15 @@ class Dom {
         for (let a = 0; a < daysIcons.length; a++) {
             const iconImage = document.createElement("img");
             iconImage.src = this.getWeatherIcon(iconArray[a + 1]);
-            
-            if(daysIcons[a].firstChild){
+
+            if (daysIcons[a].firstChild) {
                 daysIcons[a].removeChild(daysIcons[a].firstChild);
             }
             daysIcons[a].appendChild(iconImage);
         }
     }
 
-    static updateTopRightContainerMinMaxTemp(minmax) {
+    static updateTopRightContainerMinMaxTemp(minmax, symbol) {
         const max = document.querySelectorAll(".max");
         const min = document.querySelectorAll(".min");
 
@@ -94,6 +94,25 @@ class Dom {
         solarenergy.textContent = weather.solarEnergy + " mj/m2";
         humidity.textContent = weather._humidity + "%";
         visibility.textContent = weather.visibility + "km";
+    }
+
+    static updateTemperatureSymbol(symbol) {
+        let tempLength = document.getElementById("tempId").textContent.length
+        const max = document.querySelectorAll(".max");
+        const min = document.querySelectorAll(".min");
+
+        let currentSymbol = document.getElementById("tempId").textContent.substring(tempLength - 2, tempLength + 1);
+        let currentValue = Number(document.getElementById("tempId").textContent.substring(0, tempLength - 2));
+        
+        if (symbol === '°F' & currentSymbol === '°C') {
+            document.getElementById("tempId").textContent = ((currentValue * (9/5)) + 32).toFixed(1)  + "°F"; 
+            max.forEach( temp => {
+                console.log(temp);
+            });
+
+        } else if(symbol === '°C' & currentSymbol === '°F') {
+            document.getElementById("tempId").textContent = ((currentValue - 32) * 5/9).toFixed(1) + "°C";
+        }
     }
 }
 
