@@ -46,7 +46,7 @@ document.querySelector(".checkbox").addEventListener('input', (e) =>{
     }else{
         symbol = "°C";
     }   
-    dom.updateTemperatureSymbol(symbol);
+    dom.updateTemperatureBySymbol(symbol);
 });
 
 window.onload = displayWeather('london uk');

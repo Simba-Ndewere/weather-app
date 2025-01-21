@@ -96,7 +96,7 @@ class Dom {
         visibility.textContent = weather.visibility + "km";
     }
 
-    static updateTemperatureSymbol(symbol) {
+    static updateTemperatureBySymbol(symbol) {
         let tempLength = document.getElementById("tempId").textContent.length
         const max = document.querySelectorAll(".max");
         const min = document.querySelectorAll(".min");
@@ -106,33 +106,40 @@ class Dom {
 
         if (symbol === '°F' & currentSymbol === '°C') {
             document.getElementById("tempId").textContent = ((currentValueLeft * (9 / 5)) + 32).toFixed(1) + "°F";
-            max.forEach(temp => {
-                let tempLengthMax = temp.textContent.length
-                let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
-                temp.textContent = ((currentValueMax * (9 / 5)) + 32).toFixed(1) + "°F";
-            });
-
-            min.forEach(temp => {
-                let tempLengthMin = temp.textContent.length
-                let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
-                console.log(currentValueMin);
-                temp.textContent = ((currentValueMin * (9 / 5)) + 32).toFixed(1) + "°F";
-            });
-
+            this.updateWeekTempToF(max,min);
         } else if (symbol === '°C' & currentSymbol === '°F') {
             document.getElementById("tempId").textContent = ((currentValueLeft - 32) * 5 / 9).toFixed(1) + "°C";
-            max.forEach(temp => {
-                let tempLengthMax = temp.textContent.length
-                let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
-                temp.textContent = ((currentValueMax - 32) * 5 / 9).toFixed(1) + "°C";
-            });
-
-            min.forEach(temp => {
-                let tempLengthMin = temp.textContent.length
-                let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
-                temp.textContent = ((currentValueMin - 32) * 5 / 9).toFixed(1) + "°C";
-            });
+            this.updateWeekTempToC(min,max);
         }
+    }
+
+    static updateWeekTempToF(max,min) {
+        max.forEach(temp => {
+            let tempLengthMax = temp.textContent.length
+            let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
+            temp.textContent = ((currentValueMax * (9 / 5)) + 32).toFixed(1) + "°F";
+        });
+
+        min.forEach(temp => {
+            let tempLengthMin = temp.textContent.length
+            let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
+            console.log(currentValueMin);
+            temp.textContent = ((currentValueMin * (9 / 5)) + 32).toFixed(1) + "°F";
+        });
+    }
+
+    static updateWeekTempToC(min,max) {
+        max.forEach(temp => {
+            let tempLengthMax = temp.textContent.length
+            let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
+            temp.textContent = ((currentValueMax - 32) * 5 / 9).toFixed(1) + "°C";
+        });
+
+        min.forEach(temp => {
+            let tempLengthMin = temp.textContent.length
+            let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
+            temp.textContent = ((currentValueMin - 32) * 5 / 9).toFixed(1) + "°C";
+        });
     }
 }
 
