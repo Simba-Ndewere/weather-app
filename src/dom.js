@@ -102,16 +102,36 @@ class Dom {
         const min = document.querySelectorAll(".min");
 
         let currentSymbol = document.getElementById("tempId").textContent.substring(tempLength - 2, tempLength + 1);
-        let currentValue = Number(document.getElementById("tempId").textContent.substring(0, tempLength - 2));
-        
+        let currentValueLeft = Number(document.getElementById("tempId").textContent.substring(0, tempLength - 2));
+
         if (symbol === '°F' & currentSymbol === '°C') {
-            document.getElementById("tempId").textContent = ((currentValue * (9/5)) + 32).toFixed(1)  + "°F"; 
-            max.forEach( temp => {
-                console.log(temp);
+            document.getElementById("tempId").textContent = ((currentValueLeft * (9 / 5)) + 32).toFixed(1) + "°F";
+            max.forEach(temp => {
+                let tempLengthMax = temp.textContent.length
+                let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
+                temp.textContent = ((currentValueMax * (9 / 5)) + 32).toFixed(1) + "°F";
             });
 
-        } else if(symbol === '°C' & currentSymbol === '°F') {
-            document.getElementById("tempId").textContent = ((currentValue - 32) * 5/9).toFixed(1) + "°C";
+            min.forEach(temp => {
+                let tempLengthMin = temp.textContent.length
+                let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
+                console.log(currentValueMin);
+                temp.textContent = ((currentValueMin * (9 / 5)) + 32).toFixed(1) + "°F";
+            });
+
+        } else if (symbol === '°C' & currentSymbol === '°F') {
+            document.getElementById("tempId").textContent = ((currentValueLeft - 32) * 5 / 9).toFixed(1) + "°C";
+            max.forEach(temp => {
+                let tempLengthMax = temp.textContent.length
+                let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
+                temp.textContent = ((currentValueMax - 32) * 5 / 9).toFixed(1) + "°C";
+            });
+
+            min.forEach(temp => {
+                let tempLengthMin = temp.textContent.length
+                let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
+                temp.textContent = ((currentValueMin - 32) * 5 / 9).toFixed(1) + "°C";
+            });
         }
     }
 }
