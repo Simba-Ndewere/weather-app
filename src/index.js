@@ -22,7 +22,7 @@ const displayWeather = async (location) => {
         modalLoader.classList.add('show');
         const weather = await api.getWeather(location);
         modalLoader.classList.remove('show');
-        dom.updateLeftContainer(weather,symbol);
+        dom.updateLeftContainer(weather);
         dom.updateTopRightContainerDay(weather.days);
         dom.updateTopRightContainerMinMaxTemp(weather.minmax, symbol);
         dom.updateTopRightContainerDayIcon(weather.dayIcons);
