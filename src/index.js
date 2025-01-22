@@ -5,7 +5,8 @@ import dom from './dom'
 const search = document.querySelector(".search");
 const modal = document.querySelector(".modal");
 const modalLoader = document.querySelector(".modal-loader");
-let symbol = '°C';
+const checkbox = document.querySelector(".checkbox");
+let symbol = checkbox.checked? '°F' : '°C'; 
 let location = '';
 
 search.addEventListener('keypress', function (e) {

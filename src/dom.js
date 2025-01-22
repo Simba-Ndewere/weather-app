@@ -10,7 +10,7 @@ import wind from './images/wind.png';
 
 class Dom {
 
-    static updateLeftContainer(weather, symbol) {
+    static updateLeftContainer(weather) {
 
         const weatherImage = document.querySelector(".weather-image");
         const iconImage = document.createElement("img");
@@ -62,6 +62,8 @@ class Dom {
             max[a].textContent = minmax[a + 1][0] + "°C";
             min[a].textContent = minmax[a + 1][1] + "°C";
         }
+
+        this.updateTemperatureBySymbol(symbol);
     }
 
     static getWeatherIcon(iconName) {
@@ -89,7 +91,7 @@ class Dom {
 
         sunrise.textContent = weather.sunrise.toString().substring(0, 5);
         sunset.textContent = weather.sunset.toString().substring(0, 5);
-        windspeed.textContent = weather.wind + "km/h"
+        windspeed.textContent = weather.wind + "km/h";
         cloudcover.textContent = weather.cloudCover + "%";
         solarenergy.textContent = weather.solarEnergy + " mj/m2";
         humidity.textContent = weather._humidity + "%";
@@ -106,14 +108,14 @@ class Dom {
 
         if (symbol === '°F' & currentSymbol === '°C') {
             document.getElementById("tempId").textContent = ((currentValueLeft * (9 / 5)) + 32).toFixed(1) + "°F";
-            this.updateWeekTempToF(max,min);
+            this.updateWeekTempToF(max, min);
         } else if (symbol === '°C' & currentSymbol === '°F') {
             document.getElementById("tempId").textContent = ((currentValueLeft - 32) * 5 / 9).toFixed(1) + "°C";
-            this.updateWeekTempToC(min,max);
+            this.updateWeekTempToC(min, max);
         }
     }
 
-    static updateWeekTempToF(max,min) {
+    static updateWeekTempToF(max, min) {
         max.forEach(temp => {
             let tempLengthMax = temp.textContent.length
             let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
@@ -123,12 +125,11 @@ class Dom {
         min.forEach(temp => {
             let tempLengthMin = temp.textContent.length
             let currentValueMin = Number(temp.textContent.substring(0, tempLengthMin - 2));
-            console.log(currentValueMin);
             temp.textContent = ((currentValueMin * (9 / 5)) + 32).toFixed(1) + "°F";
         });
     }
 
-    static updateWeekTempToC(min,max) {
+    static updateWeekTempToC(min, max) {
         max.forEach(temp => {
             let tempLengthMax = temp.textContent.length
             let currentValueMax = Number(temp.textContent.substring(0, tempLengthMax - 2));
