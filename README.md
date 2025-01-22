@@ -1,4 +1,4 @@
-Weather application live on https://simba-ndewere.github.io/Todo-List/ 
+Weather application live on https://simba-ndewere.github.io/weather-app/ 
 
 ## Project Scope
 The project is part of The Odin Project's JavaScript curriculum. You can view the project scope [here](https://www.theodinproject.com/lessons/node-path-javascript-weather-app#project-solution).
