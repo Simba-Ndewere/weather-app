@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        html {
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+<script defer src="main.js"></script></head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <section class="search">
+                <input type="text" placeholder="Search..." name="search">
+            </section>
+            <section class="icon-temp-date">
+                <section class="weather-image"></section>
+                <section class="date-temp">
+                    <div class="temp">
+                        <p id="tempId"></p>
+                    </div>
+                    <div class="conditions">
+                        <p id="conditionId"></p>
+                    </div>
+                </section>
+            </section>
+            <section class="bottom-description">
+                <p id="addressId"></p>
+            </section>
+        </div>
+        <div class="right">
+            <div class="weekly-toggle">
+                <p class="week">week forecast</p>
+                <div class="button b2" id="button-17">
+                    <input type="checkbox" class="checkbox" />
+                    <div class="knobs">
+                        <span></span>
+                    </div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <section class="right-top">
+                <div class="one">
+                    <p class="days"></p>
+                    <section class="day-image"></section>
+                    <div class="min-max">
+                        <p class="max"></p>
+                        <p class="min"></p>
+                    </div>
+                </div>
+                <div class="two">
+                    <p class="days"></p>
+                    <section class="day-image"></section>
+                    <div class="min-max">
+                        <p class="max"></p>
+                        <p class="min"></p>
+                    </div>
+                </div>
+                <div class="three">
+                    <p class="days"></p>
+                    <section class="day-image"></section>
+                    <div class="min-max">
+                        <p class="max"></p>
+                        <p class="min"></p>
+                    </div>
+                </div>
+                <div class="four">
+                    <p class="days"></p>
+                    <section class="day-image"></section>
+                    <div class="min-max">
+                        <p class="max"></p>
+                        <p class="min"></p>
+                    </div>
+                </div>
+                <div class="five">
+                    <p class="days"></p>
+                    <section class="day-image"></section>
+                    <div class="min-max">
+                        <p class="max"></p>
+                        <p class="min"></p>
+                    </div>
+                </div>
+                <div class="six">
+                    <p class="days"></p>
+                    <section class="day-image"></section>
+                    <div class="min-max">
+                        <p class="max"></p>
+                        <p class="min"></p>
+                    </div>
+                </div>
+            </section>
+            <p class="weekly">today's highlights</p>
+            <section class="right-bottom">
+                <div class="today-highlights">
+                    <div class="highlights1">
+                        <p class="sunrise-sunset">Sunrise & Sunset</p>
+                        <div class="sunrise">
+                            <img src="ddcb9d0a0e6c433c794e.png" alt="sunrise icon">
+                            <p class="sunrise-time"></p>
+                        </div>
+                        <div class="sunset">
+                            <img src="968e9b5862c01bcfa2a0.png" alt="sunrise icon">
+                            <p class="sunset-time"></p>
+                        </div>
+                    </div>
+                    <div class="highlights2">
+                        <p class="wind-status">Wind Status</p>
+                        <p class="wind"></p>
+                    </div>
+                    <div class="highlights4">
+                        <p class="cloud-cover">Cloud Cover</p>
+                        <div class="cloud-percentage">
+                            <img src="9a0c0468722fab5ed86b.png" alt="cloud cover icon">
+                            <p class="percentage-cloud-cover"></p>
+                        </div>
+                    </div>
+                    <div class="highlights3">
+                        <p class="visibility">Visibility</p>
+                        <p class="visibility-value"></p>
+                    </div>
+                    <div class="highlights5">
+                        <p class="solar-energy">Solar Energy</p>
+                        <div class="solar-percentage">
+                            <img src="43a65f4f0f63de43ccad.png" alt="solar icon">
+                            <p class="percentage-solar-generation"></p>
+                        </div>
+                    </div>
+                    <div class="highlights6">
+                        <p class="humidity">Humidity</p>
+                        <div class="humidity-percentage">
+                            <img src="818ecffcf47ed9756b5a.png" alt="humidity icon">
+                            <p class="humidity-value"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="modal">
+                <p class="message-modal">Please enter a valid location</p>
+            </div>
+            <div class="modal-loader">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
